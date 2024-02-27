@@ -7,6 +7,7 @@ import PageContainer from "@/components/PageContainer/PageContainer";
 import Footer from "@/components/Footer/Footer";
 import { Button, Card, CardBody, CardFooter, Heading, Stack, Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 interface Etape {
     id: number;
@@ -94,8 +95,10 @@ export default function Recettes() {
               </CardBody>
 
               <CardFooter>
-                <Button variant='solid' colorScheme='blue'>
-                  Buy Latte
+                <Button variant='solid' bg='brand.300' color={'white'}>
+                    <Link href={`/recettes/${recette.id}`}>
+                        Consulter la recette
+                  </Link>
                 </Button>
               </CardFooter>
             </Stack>
